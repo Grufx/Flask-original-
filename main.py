@@ -6,14 +6,19 @@ app=Flask(__name__)
 def index():
   return "Hi!dasd"
 
-
 @app.route('/home')
 def home():
-  return "<h1><a href='/about'My home</a></h1>"
+  return render_template('home.html')
+  
+@app.route('/about')
 def about():
   return render_template('about.html')
 
+
+@app.route('/contact')
 def contact():
   return render_template('contact.html',Phone=232142)
 
-app.run(host="0.0.0.0",port=8020)
+
+if __name__=='__main__':
+  app.run(host='0.0.0.0',port=8020, threaded = True, debug = True)
