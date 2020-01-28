@@ -26,6 +26,21 @@ def params():
   for key. value in args.items():
     print(f"(key).(value)")
 
+
+@app.route('/post_req')
+def post_req()
+  return request.args
+
+
+
+
+
+
+
+
+
+
+
 if __name__=='__main__':
   app.run(host='0.0.0.0',port=8020, threaded = True, debug = True)
 
