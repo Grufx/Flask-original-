@@ -28,12 +28,12 @@ def params():
 
 
 @app.route('/post_req', Methods=['POST'])
-def post_req()
+def post_req():
   return request.args
 
 
 
-
+ 
 
 
 
