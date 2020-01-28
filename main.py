@@ -27,5 +27,5 @@ def params():
     print(f"(key).(value)")
 
 if __name__=='__main__':
-  app.run(host='0.0.0.0',port=8020, threaded = True, debug = True)
+  app.run(host='0.0.0.0',port=5125, threaded = True, debug = True)
 
