@@ -27,9 +27,9 @@ def params():
     print(f"(key).(value)")
 
 
-@app.route('/post_req', Methods=['POST'])
-def post_req():
-  return request.args
+@app.route('/post', Methods=['POST'])
+def post():
+  return request.get.json()
 
 
 
