@@ -8,15 +8,15 @@
       <div class="container">
         <nav>
           <ul class="menu">
-            <li {% if aktiva_lapa == 'home' %}
+            <li {% if active_page == 'home' %}
                   class="active"
                 {% endif %}>
                 <a href="/home">Home</a></li>
-             <li {% if aktiva_lapa == 'about' %}
+             <li {% if active_page == 'about' %}
                   class="active"
                 {% endif %}>
                 <a href="/about">About</a></li>
-             <li {% if aktiva_lapa == 'contact' %}
+             <li {% if active_page == 'contact' %}
                   class="active"
                 {% endif %}>
                 <a href="/contact">Contacts</a></li>
