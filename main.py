@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-
+from file_proc import read_file
 app=Flask(__name__)
 
 @app.route('/')
@@ -27,13 +27,14 @@ def params():
     print(f"(key).(value)")
 
 
-@app.route('/post', Methods=['POST'])
+@app.route('/post', methods=['POST'])
 def post():
   return request.get.json()
 
-
-
- 
+@app.route('/read_file')
+def read_from_file():
+  content = read_file()
+  return content 
 
 
 
@@ -42,5 +43,5 @@ def post():
 
 
 if __name__=='__main__':
-  app.run(host='0.0.0.0',port=8020, threaded = True, debug = True)
+  app.run(host='0.0.0.0',port=25655, threaded = True, debug = True)
 
