@@ -18,7 +18,7 @@ def about():
 
 @app.route('/contact')
 def contact():
-  return render_template('contact.html',Phone=232142)
+  return render_template('contact.html',Phone=2321242)
 
 @app.route('/params')
 def params():
