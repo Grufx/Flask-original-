@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from file_proc import read_file
+from file_proc import read_file, write_file
+
 app=Flask(__name__)
 
 @app.route('/')
@@ -36,6 +37,24 @@ def read_from_file():
   content = read_file()
   return content 
 
+@app.route('/write_file', methods = ['POST'])
+def write_to_file():
+  content_type = request.content_type
+  if content_type == 'application/json':
+    contentJSON = request.get_json()
+    write_file(contentJSON['data'])
+    return f"Add line {contentJSON['data']} to file."
+  else:
+    return f"Content type {content_type} is not supported!"
+  
+@app.route('/file', methods = ['GET', 'POST'])
+def workFile():
+  if request.method == 'GET':
+    return read_from_file()
+  elif request.method == 'POST':
+    return write_to_file()
+  else:
+    return f"Method {request.method} is not supported!"
 
 
 
@@ -43,5 +62,5 @@ def read_from_file():
 
 
 if __name__=='__main__':
-  app.run(host='0.0.0.0',port=25655, threaded = True, debug = True)
+  app.run(host='0.0.0.0',port=25565, threaded = True, debug = True)
 

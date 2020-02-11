@@ -8,10 +8,12 @@
     <p>Contact me:{{Phone}}</p>
   </body>
 </html> -->
+  
 {% extends "layout.html" %}
-{% set active_page = "home" %}
+
+{% set aktiva_lapa = 'contact' %}
 
 {% block saturs %}
-  <h1>This is contact page</h1>
-  <p>Contact me: {{Phone}}</p>
-{% endblock %}  
+    <h1>This ic contact page</h1>
+    <p>Contact me: {{ phone }}</p>
+{% endblock %}
